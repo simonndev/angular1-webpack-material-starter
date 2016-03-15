@@ -1,0 +1,10 @@
+<md-button>
+  {{section.name}}
+  <span class="mv-visually-hidden"
+        ng-if="isSelected()"
+        ng-click="focusSection()"
+        ui-sref-active="active"
+        ui-sref="{{section.state}}">
+    current page
+  </span>
+</md-button>

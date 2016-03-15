@@ -1,17 +1,62 @@
-<md-sidenav class="md-sidenav-left"
+<md-sidenav class="salon-left-sidebar md-sidenav-left"
             md-component-id="left"
             md-is-locked-open="$mdMedia('gt-md')"
             md-disable-backdrop
             md-whiteframe="4">
   <md-toolbar class="md-theme-indigo">
-    <h1 class="md-toolbar-tools">Sidenav Left</h1>
+    <h1 class="md-toolbar-tools">TODO: Logo goes here</h1>
   </md-toolbar>
-  <md-content layout-padding>
+  <md-content class="md-theme-indigo" role="navigation" flex>
+    <ul class="salon-menu">
+      <li class="parent-list-item"
+          ng-class="{'parentActive': vm.isSectionSelected(section)}"
+          ng-repeat="section in vm.menus">
+
+        <h2 class="menu-heading md-subhead"
+            ng-if="section.type === 'heading'">
+          {{section.name}}
+        </h2>
+
+        <salon-menu-link section="section"
+                         ng-if="section.type === 'link'">
+        </salon-menu-link>
+
+        <salon-menu-toggle section="section"
+                           ng-if="section.type === 'toggle'">
+        </salon-menu-toggle>
+
+        <ul class="menu-nested-list"
+            ng-if="section.children">
+          <li ng-class="{'parentActive': vm.isSectionSelected(child)}"
+              ng-repeat="child in section.children">
+
+            <salon-menu-link section="child"
+                             ng-if="child.type === 'link'">
+            </salon-menu-link>
+
+            <salon-menu-toggle section="child"
+                               ng-if="child.type === 'toggle'">
+            </salon-menu-toggle>
+
+            <ul id="left-menu-{{child.name}}"
+                class="menu-toggle-list">
+              <li ng-repeat="page in child.pages">
+                <salon-menu-link section="page">
+                </salon-menu-link>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+
     <md-button ng-click="close()" class="md-primary" hide-gt-md>
       Close Sidenav Left
     </md-button>
+
     <p hide-md show-gt-md>
       This sidenav is locked open on your device. To go back to the default behavior, narrow your display.
     </p>
+
   </md-content>
 </md-sidenav>

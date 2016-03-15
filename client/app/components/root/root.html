@@ -1,28 +1,40 @@
 <section layout="row" flex>
   <left-sidebar></left-sidebar>
-  <md-content flex layout-padding>
-    <h1>Found in {{ vm.name }}.html</h1>
-    <div layout="column" layout-fill="" layout-align="top center">
-      <p>
-        The left sidenav will 'lock open' on a medium (>=960px wide) device.
-      </p>
-      <p>
-        The right sidenav will focus on a specific child element.
-      </p>
 
-      <div>
-        <md-button ng-click="toggleLeft()" class="md-primary" hide-gt-md="">
-          Toggle left
-        </md-button>
+  <div role="main" layout="column">
+<!--
+    <md-toolbar class="md-whiteframe-glow-z1">
+
+    </md-toolbar>
+-->
+
+    <md-content flex layout="row" layout-padding>
+      <h1>Found in {{ vm.name }}.html</h1>
+      <div layout="column" layout-fill="" layout-align="top center">
+        <p>
+          The left sidenav will 'lock open' on a medium (>=960px wide) device.
+        </p>
+        <p>
+          The right sidenav will focus on a specific child element.
+        </p>
+
+        <div>
+          <md-button class="md-primary" hide-gt-md ng-click="vm.toggleLeft()">
+            Toggle left
+          </md-button>
+        </div>
+
+        <div>
+          <md-button class="md-primary" ng-hide="isOpenRight()" ng-click="vm.toggleRight()">
+            Toggle right
+          </md-button>
+        </div>
       </div>
 
-      <div>
-        <md-button ng-click="toggleRight()" ng-hide="isOpenRight()" class="md-primary">
-          Toggle right
-        </md-button>
-      </div>
-    </div>
+      <div flex=""></div>
+    </md-content>
+  </div>
 
-    <div flex=""></div>
-  </md-content>
+
+  <!--<right-sidebar></right-sidebar>-->
 </section>

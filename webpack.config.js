@@ -1,5 +1,6 @@
 var path = require('path');
 var webpack = require('webpack');
+
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
@@ -16,6 +17,10 @@ module.exports = {
         test: /\.html$/,
         loader: 'raw'
       },
+//      {
+//        test:   /\.css$/,
+//        loader: "style!css?sourceMap!autoprefixer"
+//      },
       // SASS Loader for compiling SCSS to CSS
       {
         test: /\.scss$/,
@@ -32,6 +37,9 @@ module.exports = {
         loader: 'style!css'
       }
     ]
+  },
+  postcss: function () {
+    return [autoprefixer, precss];
   },
   sassLoader: {
     includePaths: [path.resolve(__dirname, './client/app'), path.resolve(__dirname, '/node_modules/angular-material')]

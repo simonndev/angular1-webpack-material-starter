@@ -1,0 +1,146 @@
+.menu-heading {
+  display: block;
+  line-height: 32px;
+  margin: 0;
+  padding: 8px 16px 0;
+  text-align: left;
+  width: 100%;
+  color: rgba(255, 255, 255, 0.54);
+}
+
+.salon-left-sidebar {
+  background: #106CC8;
+}
+.salon-left-sidebar md-content {
+  background: transparent;
+}
+.salon-left-sidebar,
+.salon-left-sidebar.md-locked-open-add-active,
+.salon-left-sidebar.md-locked-open {
+  width:     272px;
+  min-width: 272px;
+  max-width: 272px;
+}
+.salon-left-sidebar > * {
+  min-width: 218px;
+}
+
+.salon-menu,
+.salon-menu ul {
+  list-style: none;
+  padding: 0;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+.salon-menu li {
+  margin: 0;
+}
+.salon-menu > li:nth-child(1) {
+  border-top: none;
+}
+
+.salon-menu > li {
+  border-bottom: 1px solid #267ED5;
+}
+
+.salon-menu .md-button {
+  border-radius: 0;
+  color: white;
+  cursor: pointer;
+  display: block;
+  align-items: inherit;
+  line-height: 40px;
+  margin: 0;
+  max-height: 40px;
+  overflow: hidden;
+  padding: 0px 16px;
+  text-align: left;
+  text-decoration: none;
+  white-space: normal;
+  width: 100%;
+}
+
+.salon-menu .md-button:hover,
+.salon-menu .md-button:focus {
+  background: #267ED5 !important;
+}
+.salon-menu .md-button md-icon {
+  color: white;
+}
+
+.salon-menu md-select {
+
+ /* Override md-select margins.  With margins the menu will look incorrect and causes mobile list
+    to not be scrollable.
+  */
+  margin: 0;
+  width: 100%;
+}
+
+.salon-menu md-select md-select-label {
+  justify-content: flex-end;
+  padding-top: 10px;
+}
+
+.salon-menu md-select md-select-label span {
+  margin-right: auto;
+  padding-left: 13px;
+}
+
+.salon-menu md-select .md-select-icon {
+  margin-right: 28px;
+}
+
+.salon-menu button.md-button::-moz-focus-inner {
+  padding: 0;
+}
+.salon-menu .md-button.active {
+  background: #267ED5;
+}
+
+.salon-menu li.parentActive,
+.salon-menu li.parentActive .menu-toggle-list {
+  /*background-color: #2C80D2 !important;*/
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+ul li {
+  margin-left: 16px;
+  padding: 0;
+  margin-top: 3px;
+  list-style-position: inside;
+}
+ul li:first-child {
+  margin-top: 0;
+}
+
+/************
+ * UTILS
+ ************/
+ul.skip-links li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+ul.skip-links li a {
+  background-color: #fff;
+  display: block;
+  margin: 0.5em 0 0.5em 0.5em;
+  opacity: 0;
+  left: 0;
+  position: absolute;
+  text-decoration: none;
+  top: 0;
+  width: 92%;
+  -webkit-transition: opacity   0.15s linear;
+  -moz-transition: opacity  0.15s linear;
+  transition: opacity   0.15s linear;
+}
+ul.skip-links li a:focus {
+  background-color: #fff !important;
+  opacity: 1;
+  z-index: 2;
+}
